@@ -10,6 +10,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Roots from './Components/Roots';
 import AuthProvider from './Provider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateProfile',
-        element: <UpdateProfile></UpdateProfile>,
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/userProfile',

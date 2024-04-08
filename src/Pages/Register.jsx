@@ -3,6 +3,9 @@ import { Link, Navigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from './../Provider/AuthProvider';
+import { getAuth, updateProfile } from 'firebase/auth';
+import app from '../FireBase/Firebase.config';
+const auth = getAuth(app);
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -31,6 +34,10 @@ const Register = () => {
     setRegisterError('');
     setSuccess('');
     createUser(email, password).then(result => {
+      updateProfile(auth.currentUser, {
+        displayName: data.name,
+        photoURL: data.photo,
+      });
       if (result.user) {
         // navigate(form);
       }

@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
-  // console.log(user);
+  console.log(user);
   const handleSignout = () => {
     logOut().then().catch();
   };
@@ -15,7 +16,7 @@ const Navbar = () => {
         <NavLink to={'/'}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={'/login'}>Update Profile </NavLink>
+        <NavLink to={'/updateProfile'}>Update Profile </NavLink>
       </li>
       <li>
         <NavLink to={'/register'}> User Profile</NavLink>
@@ -24,7 +25,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 mt-6">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -60,14 +61,28 @@ const Navbar = () => {
         <div className="navbar-end ">
           <div className="dropdown dropdown-end flex items-center">
             <div
+              className="tooltip   rounded-full mr-2"
+              data-tip={user?.displayName}
+            >
+              <img
+                className="w-12 rounded-full h-12"
+                alt="profile pic"
+                src={user?.photoURL}
+              />
+            </div>
+            {/* <div
               tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <div className="w-10 rounded-full tooltip" data-tip="hello">
-                <img alt="Tailwind CSS Navbar component" src="" />
-              </div>
-            </div>
+              <div
+                className="w-10 rounded-full tooltip"
+                // data-tooltip-id="my-tooltip"
+                // data-tooltip-content={user?.displayName}
+                // data-tooltip-place="top"
+                data-tip={user?.displayName}
+              ></div>
+            </div> */}
 
             {user ? (
               <Link
