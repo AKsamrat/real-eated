@@ -1,7 +1,14 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
+  const { logOut, user } = useContext(AuthContext);
+  // console.log(user);
+  const handleSignout = () => {
+    logOut().then().catch();
+  };
+
   const navlink = (
     <>
       <li>
@@ -43,6 +50,9 @@ const Navbar = () => {
               {navlink}
             </ul>
           </div>
+          <Link to={'/'} className="btn btn-ghost text-xl">
+            Luxery life
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navlink}</ul>
@@ -54,11 +64,11 @@ const Navbar = () => {
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <div className="w-10 rounded-full">
+              <div className="w-10 rounded-full tooltip" data-tip="hello">
                 <img alt="Tailwind CSS Navbar component" src="" />
               </div>
             </div>
-            {/* 
+
             {user ? (
               <Link
                 className="btn bg-slate-700 text-white"
@@ -74,7 +84,7 @@ const Navbar = () => {
               >
                 LogIn
               </Link>
-            )} */}
+            )}
           </div>
         </div>
       </div>

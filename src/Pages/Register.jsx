@@ -1,27 +1,44 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { useForm } from 'react-hook-form';
+import { AuthContext } from './../Provider/AuthProvider';
 
 const Register = () => {
-  const handleRegister = e => {
-    e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const email = form.get('email');
-    const password = form.get('password');
-    const name = form.get('name');
-    const photo = form.get('photo');
+  const { createUser } = useContext(AuthContext);
+  const [showPassword, setPassword] = useState(false);
+  const [registerError, setRegisterError] = useState('');
+  const [success, setSuccess] = useState('');
 
-    // creatUser(email, password)
-    //   .then(result => {
-    //     console.log(result.user);
-    //   })
-    //   .catch(error => {
-    //     console.error(error.message);
-    //   });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    // console.log(email, password, name, photo);
+  const onSubmit = data => {
+    const { email, password } = data;
+    if (password.length < 6) {
+      setRegisterError('Password Should be minium 6 Charecter');
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setRegisterError('Minimun add one upper case');
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setRegisterError('Minimun add one lower case');
+      return;
+    }
+    setRegisterError('');
+    setSuccess('');
+    createUser(email, password).then(result => {
+      if (result.user) {
+        // navigate(form);
+      }
+    });
   };
+
   return (
-    <div>
+    <div className=" lg:pl-32">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Register</h1>
@@ -29,11 +46,16 @@ const Register = () => {
             Please Register your Account
           </p>
         </div>
-        <form onSubmit={handleRegister} action="" className="space-y-12">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          action=""
+          className="space-y-12"
+        >
           <div className="space-y-4">
             <div>
               <label className="block mb-2 text-sm">Your Name</label>
               <input
+                {...register('name', { required: true })}
                 required
                 type="text"
                 name="name"
@@ -41,21 +63,25 @@ const Register = () => {
                 placeholder="A k samrat"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
               />
+              {errors.name && <span>This field is required</span>}
             </div>
             <div>
               <label className="block mb-2 text-sm">Photo Url</label>
               <input
+                {...register('photo', { required: true })}
                 required
                 type="text"
-                name="name"
-                id="name"
+                name="photo"
+                id="photo"
                 placeholder="photo Url"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
               />
+              {errors.photo && <span>This field is required</span>}
             </div>
             <div>
               <label className="block mb-2 text-sm">Email address</label>
               <input
+                {...register('email', { required: true })}
                 required
                 type="email"
                 name="email"
@@ -63,6 +89,7 @@ const Register = () => {
                 placeholder="leroy@jenkins.com"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
               />
+              {errors.email && <span>This field is required</span>}
             </div>
             <div>
               <div className="flex justify-between mb-2">
@@ -70,15 +97,28 @@ const Register = () => {
               </div>
               <div className="relative">
                 <input
-                  type=""
+                  {...register('password', { required: true })}
+                  type={showPassword ? 'text' : 'password'}
                   name="password"
                   id="password"
                   required
                   placeholder="*****"
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
                 />
-                <span className="absolute top-3 right-2"></span>
+                <span
+                  className="absolute top-3 right-2"
+                  onClick={() => setPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                </span>
               </div>
+              {registerError ? (
+                <p className="text-md font-semibold text-red-600">
+                  {registerError}
+                </p>
+              ) : (
+                <p></p>
+              )}
             </div>
           </div>
           <input type="checkbox" name="terms" id="" />{' '}
@@ -104,7 +144,7 @@ const Register = () => {
             href="#"
             className="hover:underline text-violet-600 font-bold"
           >
-            Sign up
+            Sign In
           </Link>
         </p>
       </div>
