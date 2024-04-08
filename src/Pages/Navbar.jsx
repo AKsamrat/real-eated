@@ -5,7 +5,7 @@ import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   const handleSignout = () => {
     logOut().then().catch();
   };

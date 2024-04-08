@@ -7,12 +7,14 @@ const Login = () => {
   const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  // console.log(location);
+  const from = location?.state ? location.state : '/';
+  console.log(location);
   const handleSocialLogin = socialProvider => {
     socialProvider().then(result => {
-      if (result.user) {
-        //  navigate(form);
-      }
+      // if (result.user) {
+      //   navigate('/');
+      // }
+      // navigate(from, { replace: true });
     });
   };
 
@@ -28,6 +30,7 @@ const Login = () => {
       console.log(result.user);
       if (result.user) {
         // navigate(form);
+        navigate(from, { replace: true });
       }
     });
   };

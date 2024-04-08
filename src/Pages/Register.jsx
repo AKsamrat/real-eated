@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from './../Provider/AuthProvider';
@@ -12,6 +12,9 @@ const Register = () => {
   const [showPassword, setPassword] = useState(false);
   const [registerError, setRegisterError] = useState('');
   const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state ? location.state : '/';
 
   const {
     register,
@@ -39,7 +42,7 @@ const Register = () => {
         photoURL: data.photo,
       });
       if (result.user) {
-        // navigate(form);
+        navigate(from);
       }
     });
   };

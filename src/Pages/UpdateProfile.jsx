@@ -2,14 +2,15 @@ import { getAuth, updateProfile } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import app from '../FireBase/Firebase.config';
-import { AuthContext } from '../Provider/AuthProvider';
+
+import { useLocation, useNavigate } from 'react-router-dom';
 const auth = getAuth(app);
 
 const UpdateProfile = () => {
-  const { createUser } = useContext(AuthContext);
-  const [showPassword, setPassword] = useState(false);
-  const [registerError, setRegisterError] = useState('');
   const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state ? location.state : '/';
   const {
     register,
     handleSubmit,
@@ -17,15 +18,15 @@ const UpdateProfile = () => {
   } = useForm();
 
   const onSubmit = data => {
-    const { email, password } = data;
+    // const { email, password } = data;
 
     updateProfile(auth.currentUser, {
       displayName: data.name,
       photoURL: data.photo,
     });
-    // if (result.user) {
-    //   // navigate(form);
-    // }
+    if (result.user) {
+      navigate(from);
+    }
   };
   return (
     <div>
