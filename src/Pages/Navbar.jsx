@@ -51,8 +51,8 @@ const Navbar = () => {
               {navlink}
             </ul>
           </div>
-          <Link to={'/'} className="btn btn-ghost text-xl">
-            Luxery life
+          <Link to={'/'} className=" text-xl">
+            <img className="w-64" src="logo1.png" alt="" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -65,7 +65,7 @@ const Navbar = () => {
               data-tip={user?.displayName}
             >
               <img
-                className="w-12 rounded-full h-12"
+                className="w-12 rounded-full h-12 "
                 alt="profile pic"
                 src={user?.photoURL}
               />

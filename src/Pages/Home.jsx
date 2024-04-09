@@ -1,9 +1,10 @@
 import React from 'react';
+import EstateSection from '../Components/EstateSection';
 
 const Home = () => {
   return (
     <div>
-      <p>home page</p>
+      <EstateSection></EstateSection>
     </div>
   );
 };

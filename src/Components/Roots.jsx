@@ -16,7 +16,7 @@ const Roots = () => {
     }
   }, [loc.pathname]);
   return (
-    <div>
+    <div className="container lg:px-20 px-5 mx-auto">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>

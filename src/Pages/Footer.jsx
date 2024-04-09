@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -11,9 +12,9 @@ const Footer = () => {
               href=""
               className="flex justify-center space-x-3 lg:justify-start"
             >
-              <span className="self-center text-3xl font-bold text-[#23BE0A] pl-5">
-                Book Vibe
-              </span>
+              <Link to={'/'} className="btn btn-ghost text-xl">
+                <img className="w-72" src="logo1.png" alt="" />
+              </Link>
             </a>
           </div>
           <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
