@@ -64,11 +64,13 @@ const Navbar = () => {
               className="tooltip   rounded-full mr-2"
               data-tip={user?.displayName}
             >
-              <img
-                className="w-12 rounded-full h-12 "
-                alt="profile pic"
-                src={user?.photoURL}
-              />
+              {user && (
+                <img
+                  className="w-12 rounded-full h-12 "
+                  alt="profile pic"
+                  src={user?.photoURL}
+                />
+              )}
             </div>
             {/* <div
               tabIndex={0}
