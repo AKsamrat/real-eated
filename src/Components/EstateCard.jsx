@@ -1,7 +1,8 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 const EstateCard = ({ item }) => {
-  const { image, price, location, estate_title, area, status, rating } = item;
+  const { image, price, location, estate_title, area, status, rating, id } =
+    item;
   return (
     <div>
       <div className="card  shadow-xl border-2 border-slate-200 rounded-2xl p-6 h-full">
@@ -59,28 +60,31 @@ const EstateCard = ({ item }) => {
               {rating}
             </div>
           </div>
-          <h2 className="card-title text-2xl font-bold">{estate_title}</h2>
+          <h2 className="card-title text-2xl font-bold pb-3">{estate_title}</h2>
 
           <hr />
-          <div className="card-actions justify-between mt-4">
+          <div className="card-actions justify-between items-center my-4">
             <div className="badge badge-outline">{location}</div>
             <div className="flex items-center gap-2">
-              <p className="font-bold text-xl">${price}</p>
+              <p className="font-bold text-2xl text-orange-400">${price}</p>
             </div>
           </div>
           <hr />
-          <div className="flex justify-between items-center">
+          <Link
+            className="flex justify-between items-center"
+            to={`/details/ ${id}`}
+          >
             <button
               type="button"
-              className="relative px-6 py-2 ml-4 overflow-hidden font-semibold rounded bg-gray-800 text-gray-50 mt-4"
+              className="relative px-6 py-2 ml-4 overflow-hidden font-semibold rounded bg-gray-800 text-[#AD8B00] mt-4"
             >
               View Property
-              <span className="absolute top-0 right-0 px-5 py-1 text-xs tracking-wider text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 bg-violet-600">
+              <span className="absolute top-0 right-0 px-5 py-1 text-xs tracking-wider text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 bg-[#AD8B00] text-white">
                 {status}
               </span>
             </button>
             <p>{area}sft</p>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

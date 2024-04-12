@@ -10,7 +10,7 @@ import PrivateIsland from '../tab/PrivateIsland';
 const EstateSection = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [data, setData] = useState([]);
-  console.log(data);
+  // console.log(data);
   useEffect(() => {
     fetch('data.json')
       .then(res => res.json())
@@ -28,6 +28,9 @@ const EstateSection = () => {
 
   return (
     <div className="mt-8 md:font-medium md:text-lg text-[#AD8B00] ">
+      <h3 className="text-center text-2xl md:text-5xl font-bold py-6">
+        Luxury Category
+      </h3>
       <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
         <TabList>
           <Tab>Penthouse</Tab>

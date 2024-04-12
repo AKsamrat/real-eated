@@ -11,6 +11,8 @@ import Register from './Pages/Register';
 import Roots from './Components/Roots';
 import AuthProvider from './Provider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import CardDetails from './Components/CardDetails';
+import Contact from './Pages/Contact';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -30,12 +32,25 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
+        path: '/contact',
+        element: <Contact></Contact>,
+      },
+      {
         path: '/updateProfile',
         element: (
           <PrivateRoute>
             <UpdateProfile></UpdateProfile>
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/details/:id',
+        element: (
+          <PrivateRoute>
+            <CardDetails></CardDetails>
+          </PrivateRoute>
+        ),
+        loader: async () => fetch('/data.json'),
       },
       {
         path: '/userProfile',

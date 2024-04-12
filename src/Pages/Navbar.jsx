@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
-import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
@@ -19,7 +18,7 @@ const Navbar = () => {
         <NavLink to={'/updateProfile'}>Update Profile </NavLink>
       </li>
       <li>
-        <NavLink to={'/register'}> User Profile</NavLink>
+        <NavLink to={'/contact'}> Contact Us</NavLink>
       </li>
     </>
   );
@@ -52,7 +51,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to={'/'} className=" text-xl">
-            <img className="w-64" src="logo1.png" alt="" />
+            <img className="w-64" src="/logo1.png" alt="" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

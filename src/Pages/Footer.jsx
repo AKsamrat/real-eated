@@ -13,16 +13,16 @@ const Footer = () => {
               className="flex justify-center space-x-3 lg:justify-start"
             >
               <Link to={'/'} className="btn btn-ghost text-xl">
-                <img className="w-72" src="logo1.png" alt="" />
+                <img className="w-72" src="/logo1.png" alt="" />
               </Link>
             </a>
           </div>
           <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
             <div className="space-y-3">
-              <h3 className="tracking-wide uppercase font-bold text-gray-900">
+              <h3 className="tracking-wide uppercase font-bold text-[#AD8B00]">
                 Product
               </h3>
-              <ul className="space-y-1">
+              <ul className="space-y-1 *:text-[#ad8a00b2]">
                 <li>
                   <a rel="noopener noreferrer" href="#">
                     Features
@@ -46,10 +46,10 @@ const Footer = () => {
               </ul>
             </div>
             <div className="space-y-3">
-              <h3 className="tracking-wide uppercase text-gray-900 font-bold">
+              <h3 className="tracking-wide uppercase text-[#AD8B00] font-bold">
                 Company
               </h3>
-              <ul className="space-y-1">
+              <ul className="space-y-1 *:text-[#ad8a00b2]">
                 <li>
                   <a rel="noopener noreferrer" href="#">
                     Privacy
@@ -63,8 +63,8 @@ const Footer = () => {
               </ul>
             </div>
             <div className="space-y-3">
-              <h3 className="uppercase text-gray-900 font-bold">Developers</h3>
-              <ul className="space-y-1">
+              <h3 className="uppercase text-[#AD8B00] font-bold">Developers</h3>
+              <ul className="space-y-1 *:text-[#ad8a00b2]">
                 <li>
                   <a rel="noopener noreferrer" href="#">
                     Public API
@@ -83,10 +83,10 @@ const Footer = () => {
               </ul>
             </div>
             <div className="space-y-3">
-              <div className="uppercase text-gray-900 font-bold">
+              <div className="uppercase text-[#AD8B00] font-bold">
                 Social media
               </div>
-              <div className="flex justify-start space-x-3">
+              <div className="flex justify-start space-x-3 *:text-[#ad8a0090]">
                 <a
                   rel="noopener noreferrer"
                   href="#"
