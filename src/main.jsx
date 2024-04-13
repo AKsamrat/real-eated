@@ -13,6 +13,10 @@ import AuthProvider from './Provider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import CardDetails from './Components/CardDetails';
 import Contact from './Pages/Contact';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 const router = createBrowserRouter([
   {
     path: '/',
