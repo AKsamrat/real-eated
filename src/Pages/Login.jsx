@@ -2,13 +2,15 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state ? location.state : '/';
-  console.log(location);
+  // console.log(location);
   const handleSocialLogin = socialProvider => {
     socialProvider().then(result => {
       // if (result.user) {
@@ -26,21 +28,26 @@ const Login = () => {
 
   const onSubmit = data => {
     const { email, password } = data;
-    signIn(email, password).then(result => {
-      console.log(result.user);
-      if (result.user) {
-        // navigate(form);
-        navigate(from, { replace: true });
-      }
-    });
+    signIn(email, password)
+      .then(result => {
+        console.log(result.user);
+        if (result.user) {
+          toast('Succesfully Login');
+          // navigate(form);
+          navigate(from, { replace: true });
+        }
+      })
+      .catch(error => {
+        toast('Dont Match email & pass');
+      });
   };
 
   return (
     <div>
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 text-gray-800">
+      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50  text-[#AD8B00]">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign in</h1>
-          <p className="text-sm dark:text-gray-600">
+          <p className="text-sm text-gray-600">
             Sign in to access your account
           </p>
         </div>
@@ -61,7 +68,7 @@ const Login = () => {
                 name="email"
                 id="email"
                 placeholder="leroy@jenkins.com"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 dark:text-gray-800"
+                className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
               />
               {errors.email && <span>This field is required</span>}
             </div>
@@ -93,7 +100,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="w-full px-8 py-3 font-semibold rounded-md bg-violet-600 text-gray-50"
+                className="w-full px-8 py-3 font-semibold rounded-md bg-[#AD8B00] text-gray-50"
               >
                 Sign in
               </button>
@@ -101,11 +108,11 @@ const Login = () => {
           </div>
         </form>
         <div className="flex items-center pt-4 space-x-1">
-          <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+          <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
           <p className="px-3 text-sm dark:text-gray-600">
             Login with social accounts
           </p>
-          <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+          <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
         </div>
         <div className="flex justify-center space-x-4">
           <button
@@ -143,7 +150,7 @@ const Login = () => {
             to={'/register'}
             rel="noopener noreferrer"
             href="#"
-            className="hover:underline text-violet-600"
+            className="hover:underline text-[#AD8B00]"
           >
             Sign up
           </Link>

@@ -3,9 +3,14 @@ import { FaTwitter } from 'react-icons/fa';
 const Testimonial = () => {
   return (
     <div className="mt-20 text-[#AD8B00]">
-      <h3 className=" text-5xl font-bold text-center mb-12">
+      <h3 className=" text-5xl font-bold text-center ">
         Happy <span className="text-oranges">Clients says</span>
       </h3>
+      <p className="text-center py-8 ">
+        With Celebration, it’s quicker with the customer, the customer is more
+        ensured <br /> of getting exactly what they ordered, and I’m all for the
+        efficiency.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-11">
         <div
           className="card card-compact  bg-base-10  border border-[#ad8a0058] shadow-xl p-4 md:p-8 lg:p-8 text-center "
@@ -31,8 +36,9 @@ const Testimonial = () => {
               data-aos-delay="700"
               data-aos-duration="700"
             >
-              Slate helps you see how many more days you need to work to reach
-              your financial goal for the month and year.
+              You made it so simple. My new site is so much faster and easier to
+              work with than my old site. I just choose the page, make the
+              change and click save.
             </p>
             <div
               className="rating flex-1 justify-center"

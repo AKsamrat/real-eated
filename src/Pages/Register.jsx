@@ -6,6 +6,8 @@ import { AuthContext } from './../Provider/AuthProvider';
 import { getAuth, updateProfile } from 'firebase/auth';
 import app from '../FireBase/Firebase.config';
 const auth = getAuth(app);
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -37,19 +39,21 @@ const Register = () => {
     setRegisterError('');
     setSuccess('');
     createUser(email, password).then(result => {
+      toast('successfully register');
       updateProfile(auth.currentUser, {
         displayName: data.name,
         photoURL: data.photo,
       });
       if (result.user) {
-        navigate(from);
+        // navigate(from);
+        data.name('');
       }
     });
   };
 
   return (
     <div className=" lg:pl-32">
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
+      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50 text-[#AD8B00]">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Register</h1>
           <p className="text-sm dark:text-gray-600">
@@ -97,7 +101,7 @@ const Register = () => {
                 name="email"
                 id="email"
                 placeholder="leroy@jenkins.com"
-                className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800"
               />
               {errors.email && <span>This field is required</span>}
             </div>
@@ -113,7 +117,7 @@ const Register = () => {
                   id="password"
                   required
                   placeholder="*****"
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 dark:text-gray-800"
                 />
                 <span
                   className="absolute top-3 right-2"
@@ -139,7 +143,7 @@ const Register = () => {
             <div>
               <button
                 type="submit"
-                className="w-full px-8 py-3 font-semibold rounded-md bg-violet-600 text-gray-50"
+                className="w-full px-8 py-3 font-semibold rounded-md bg-[#AD8B00] text-gray-50"
               >
                 Register
               </button>
@@ -152,7 +156,7 @@ const Register = () => {
             to={'/login'}
             rel="noopener noreferrer"
             href="#"
-            className="hover:underline text-violet-600 font-bold"
+            className="hover:underline text-[#AD8B00] font-bold"
           >
             Sign In
           </Link>

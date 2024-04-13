@@ -15,6 +15,8 @@ import CardDetails from './Components/CardDetails';
 import Contact from './Pages/Contact';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // ..
 AOS.init();
 const router = createBrowserRouter([
@@ -69,5 +71,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+    <ToastContainer />
   </React.StrictMode>
 );

@@ -3,6 +3,8 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import app from '../FireBase/Firebase.config';
 // import img1 from '../assets/update1.jpg';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -22,12 +24,13 @@ const UpdateProfile = () => {
 
   const onSubmit = data => {
     // const { email, password } = data;
+    toast('Profile Update Seccesfully');
 
     updateProfile(auth.currentUser, {
       displayName: data.name,
       photoURL: data.photo,
     });
-    if (result.user) {
+    if (data.user) {
       navigate(from);
     }
   };
