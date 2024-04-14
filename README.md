@@ -1,8 +1,37 @@
-# React + Vite
+## <code style="color:green"> Website Name: Luxury Life</code>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### <code style="color:aqua"> Live Link:</code>
 
-Currently, two official plugins are available:
+```bash
+https://real-estate-6921f.web.app/
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### <code style="color:aqua">Features and characteristics :</code>
+
+- I use fire base authentication for user login and registration
+- In my site i use Dynamic card
+- I implement private routing that's why no one can see the details of cards
+  data and cant update profile without login.
+- A beautiful slider made for user in the banner section which will attract user
+  and also implement animation in card .
+- IF any issue user can contact by sending massage us.
+- I make the site by using Dynamic routing
+
+### <code style="color:aqua">npm Package Name:</code>
+
+- fortawesome/fontawesome-free
+- aos
+- firebase10.10.0
+- "localforage": "^1.10.0",
+- "match-sorter": "^6.3.4",
+- "mdb-react-ui-kit": "^7.2.0",
+- "react": "^18.2.0",
+- "react-dom": "^18.2.0",
+- "react-hook-form": "^7.51.2",
+- "react-icons": "^5.0.1",
+- "react-router-dom": "^6.22.3",
+- "react-tabs": "^6.0.2",
+- "react-toastify": "^10.0.5",
+- "react-tooltip": "^5.26.3",
+- "sort-by": "^1.2.0",
+- "swiper": "^11.1.0"
