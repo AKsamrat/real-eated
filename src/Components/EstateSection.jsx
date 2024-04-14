@@ -28,9 +28,12 @@ const EstateSection = () => {
 
   return (
     <div className="mt-8 md:font-medium md:text-lg text-[#AD8B00] ">
-      <h3 className="text-center text-2xl md:text-5xl font-bold py-6">
+      <h3 className="text-center text-2xl md:text-5xl font-bold pt-6">
         Luxury Category
       </h3>
+      <p className="text-center py-4">
+        Select The Category to find your Luxury life and Enjoy the Life
+      </p>
       <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
         <TabList>
           <Tab>Penthouse</Tab>
