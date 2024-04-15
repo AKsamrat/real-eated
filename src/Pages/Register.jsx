@@ -21,6 +21,7 @@ const Register = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -39,16 +40,21 @@ const Register = () => {
     setRegisterError('');
     setSuccess('');
     createUser(email, password).then(result => {
-      toast('successfully register');
       updateProfile(auth.currentUser, {
         displayName: data.name,
         photoURL: data.photo,
-      });
-      if (result.user) {
-        // navigate(from);
-        data.name('');
-      }
+      })
+        .then(result => {
+          toast('successfully register');
+          // if (result.user) {
+          //   navigate(from);
+          // }
+        })
+        .catch(error => {
+          toast('Email and Pass Problem');
+        });
     });
+    reset();
   };
 
   return (
@@ -150,13 +156,13 @@ const Register = () => {
             </div>
           </div>
         </form>
-        <p className="px-6 text-sm text-center text-gray-600">
+        <p className="px-6 text-sm text-center text-gray-600 pt-3 ">
           Already have account
           <Link
             to={'/login'}
             rel="noopener noreferrer"
             href="#"
-            className="hover:underline text-[#AD8B00] font-bold"
+            className="hover:underline text-[#AD8B00] font-bold text-xl "
           >
             Sign In
           </Link>

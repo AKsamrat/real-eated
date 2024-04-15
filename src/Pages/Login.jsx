@@ -22,6 +22,7 @@ const Login = () => {
 
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -40,6 +41,7 @@ const Login = () => {
       .catch(error => {
         toast('Dont Match email & pass');
       });
+    reset();
   };
 
   return (
@@ -144,13 +146,13 @@ const Login = () => {
           </button>
         </div>
         <hr />
-        <p className="px-6 text-sm text-center text-gray-600">
+        <p className="px-6 text-sm text-center text-gray-600 pt-3">
           Don't have an account yet?
           <Link
             to={'/register'}
             rel="noopener noreferrer"
             href="#"
-            className="hover:underline text-[#AD8B00]"
+            className="hover:underline text-[#AD8B00] text-xl font-bold"
           >
             Sign up
           </Link>

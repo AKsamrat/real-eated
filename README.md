@@ -23,7 +23,6 @@ https://real-estate-6921f.web.app/
 - aos
 - firebase10.10.0
 - "localforage": "^1.10.0",
-- "match-sorter": "^6.3.4",
 - "mdb-react-ui-kit": "^7.2.0",
 - "react": "^18.2.0",
 - "react-dom": "^18.2.0",
@@ -33,5 +32,4 @@ https://real-estate-6921f.web.app/
 - "react-tabs": "^6.0.2",
 - "react-toastify": "^10.0.5",
 - "react-tooltip": "^5.26.3",
-- "sort-by": "^1.2.0",
 - "swiper": "^11.1.0"

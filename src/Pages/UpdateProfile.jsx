@@ -1,5 +1,5 @@
 import { getAuth, updateProfile } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import app from '../FireBase/Firebase.config';
 // import img1 from '../assets/update1.jpg';
@@ -11,13 +11,14 @@ import { AuthContext } from '../Provider/AuthProvider';
 const auth = getAuth(app);
 
 const UpdateProfile = () => {
-  const { user } = useContext(AuthContext);
-  const [success, setSuccess] = useState('');
+  const { user, setReload } = useContext(AuthContext);
+  // const [success, setSuccess] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state ? location.state : '/';
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -25,14 +26,15 @@ const UpdateProfile = () => {
   const onSubmit = data => {
     // const { email, password } = data;
     toast('Profile Update Seccesfully');
-
+    // setUser(data);
     updateProfile(auth.currentUser, {
       displayName: data.name,
       photoURL: data.photo,
-    });
+    }).then(result => setReload(true));
     if (data.user) {
       navigate(from);
     }
+    reset();
   };
   return (
     <div
@@ -91,8 +93,8 @@ const UpdateProfile = () => {
             <h1
               className="my-3 text-4xl font-extrabold text-[#AD8B00]"
               data-aos="fade-left"
-              data-aos-duration="1000"
-              data-aos-delay="1200"
+              data-aos-duration="700"
+              data-aos-delay="700"
             >
               Profile Update
             </h1>
@@ -153,8 +155,8 @@ const UpdateProfile = () => {
               <div>
                 <button
                   data-aos="fade-left"
-                  data-aos-duration="1000"
-                  data-aos-delay="1200"
+                  data-aos-duration="700"
+                  data-aos-delay="700"
                   type="submit"
                   className="w-full px-8 py-3 font-semibold rounded-md bg-[#AD8B00] text-gray-50"
                 >

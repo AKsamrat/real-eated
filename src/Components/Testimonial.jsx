@@ -3,7 +3,7 @@ import { FaTwitter } from 'react-icons/fa';
 const Testimonial = () => {
   return (
     <div className="mt-20 text-[#AD8B00]">
-      <h3 className=" text-5xl font-bold text-center ">
+      <h3 className="text-2xl lg:text-5xl font-bold text-center ">
         Happy <span className="text-oranges">Clients says</span>
       </h3>
       <p className="text-center py-8 ">
@@ -11,16 +11,16 @@ const Testimonial = () => {
         ensured <br /> of getting exactly what they ordered, and I’m all for the
         efficiency.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-11">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-11 overflow-hidden">
         <div
-          className="card card-compact  bg-base-10  border border-[#ad8a0058] shadow-xl p-4 md:p-8 lg:p-8 text-center "
+          className="card card-compact  bg-base-10  border border-[#ad8a0058] shadow-xl p-4 md:p-8 lg:p-8 text-center overflow-hidden"
           data-aos="fade-right"
           data-aos-delay="600"
           data-aos-duration="700"
         >
           <figure>
             <img
-              className="size-36"
+              className="size-36 overflow-hidden"
               src="/user-1.png"
               alt="Shoes"
               data-aos="zoom-in-up"
@@ -30,7 +30,7 @@ const Testimonial = () => {
           </figure>
           <div className="card-body space-y-4">
             <p
-              className="opacity-80"
+              className="opacity-80 overflow-hidden"
               data-aos="zoom-out-up"
               data-aos-anchor-placement="top-bottom"
               data-aos-delay="700"
@@ -41,7 +41,7 @@ const Testimonial = () => {
               change and click save.
             </p>
             <div
-              className="rating flex-1 justify-center"
+              className="rating flex-1 justify-center overflow-hidden pb-10"
               data-aos="fade-up"
               data-aos-delay="1000"
               data-aos-duration="700"
@@ -74,37 +74,37 @@ const Testimonial = () => {
               />
             </div>
             <p
-              className="text-blue-600 font-bold"
+              className="text-blue-600 font-bold overflow-hidden m-0"
               data-aos="fade-left"
-              data-aos-delay="1800"
+              data-aos-delay="1700"
               data-aos-duration="700"
             >
               Aurthen
             </p>
             <p
-              className="font-bold"
+              className="font-bold overflow-hidden"
               data-aos="fade-right"
-              data-aos-delay="2100"
+              data-aos-delay="1700"
               data-aos-duration="700"
             >
               Banker
             </p>
             <div className="flex justify-between items-center ">
               <button
-                className="flex justify-center items-center gap-2 text-lg font-bold flex-1"
+                className="flex justify-center items-center gap-2 text-lg font-bold overflow-hidden"
                 data-aos="fade-left"
-                data-aos-delay="2200"
+                data-aos-delay="1800"
                 data-aos-duration="700"
               >
                 See On{' '}
-                <span>
+                <span className="text-blue-400">
                   <FaTwitter />
                 </span>{' '}
               </button>
               <p
-                className=" lg:ml-16"
+                className=" lg:ml-16 overflow-hidden"
                 data-aos="fade-right"
-                data-aos-delay="2200"
+                data-aos-delay="1800"
                 data-aos-duration="700"
               >
                 Jun 10, 2024
@@ -114,14 +114,14 @@ const Testimonial = () => {
         </div>
 
         <div
-          className="card card-compact  bg-base-10 border border-[#ad8a0058] shadow-xl md:p-8 lg:p-8 text-center"
+          className="card card-compact  bg-base-10 border border-[#ad8a0058] shadow-xl md:p-8 lg:p-8 text-center overflow-hidden"
           data-aos="fade-down"
           data-aos-delay="600"
           data-aos-duration="700"
         >
           <figure>
             <img
-              className="size-36"
+              className="size-36 overflow-hidden"
               src="/user-2.png"
               alt="Shoes"
               data-aos="zoom-in-up"
@@ -129,9 +129,9 @@ const Testimonial = () => {
               data-aos-delay="50"
             />
           </figure>
-          <div className="card-body space-y-4">
+          <div className="card-body space-y-2">
             <p
-              className="opacity-80"
+              className="opacity-80 overflow-hidden"
               data-aos="zoom-out-up"
               data-aos-anchor-placement="top-bottom"
               data-aos-delay="700"
@@ -142,7 +142,7 @@ const Testimonial = () => {
               balcony with spectacular uninterrupted sea views of Mercury Bay.
             </p>
             <div
-              className="rating flex-1 justify-center"
+              className="rating flex-1 justify-center overflow-hidden pb-10"
               data-aos="fade-up"
               data-aos-delay="1000"
               data-aos-duration="700"
@@ -175,37 +175,37 @@ const Testimonial = () => {
               />
             </div>
             <p
-              className="text-blue-600 font-bold"
+              className="text-blue-600 font-bold overflow-hidden"
               data-aos="fade-left"
-              data-aos-delay="1800"
+              data-aos-delay="1700"
               data-aos-duration="700"
             >
               Regina Miles
             </p>
             <p
-              className="font-bold"
+              className="font-bold overflow-hidden"
               data-aos="fade-right"
-              data-aos-delay="2100"
+              data-aos-delay="1700"
               data-aos-duration="700"
             >
               Banker
             </p>
             <div className="flex justify-between items-center">
               <button
-                className="flex justify-center items-center gap-2 text-lg font-bold"
+                className="flex justify-center items-center gap-2 text-lg font-bold overflow-hidden"
                 data-aos="fade-left"
-                data-aos-delay="2200"
+                data-aos-delay="1800"
                 data-aos-duration="700"
               >
                 See On{' '}
-                <span>
+                <span className="text-blue-400">
                   <FaTwitter />
                 </span>{' '}
               </button>
               <p
-                className="lg:ml-16"
+                className="lg:ml-16 overflow-hidden"
                 data-aos="fade-right"
-                data-aos-delay="2200"
+                data-aos-delay="1800"
                 data-aos-duration="700"
               >
                 Jan 12, 2023
@@ -215,14 +215,14 @@ const Testimonial = () => {
         </div>
 
         <div
-          className="card card-compact  bg-base-10 border border-[#ad8a0058] shadow-xl p-4 md:p-8 lg:p-8 text-center"
+          className="card card-compact  bg-base-10 border border-[#ad8a0058] shadow-xl p-4 md:p-8 lg:p-8 text-center overflow-hidden"
           data-aos="fade-left"
           data-aos-delay="600"
           data-aos-duration="700"
         >
           <figure>
             <img
-              className="size-36"
+              className="size-36 overflow-hidden"
               src="/user-3.png"
               alt="Shoes"
               data-aos="zoom-in-up"
@@ -232,7 +232,7 @@ const Testimonial = () => {
           </figure>
           <div className="card-body space-y-4">
             <p
-              className="opacity-80"
+              className="opacity-80 overflow-hidden"
               data-aos="zoom-out-up"
               data-aos-anchor-placement="top-bottom"
               data-aos-delay="700"
@@ -244,7 +244,7 @@ const Testimonial = () => {
               traffi
             </p>
             <div
-              className="rating flex-1 justify-center"
+              className="rating flex-1 justify-center pb-10 overflow-hidden"
               data-aos="fade-up"
               data-aos-delay="1000"
               data-aos-duration="700"
@@ -277,37 +277,37 @@ const Testimonial = () => {
               />
             </div>
             <p
-              className="text-blue-600 font-bold"
+              className="text-blue-600 font-bold overflow-hidden"
               data-aos="fade-left"
-              data-aos-delay="1800"
+              data-aos-delay="1700"
               data-aos-duration="700"
             >
               Bread
             </p>
             <p
-              className="font-bold"
+              className="font-bold overflow-hidden"
               data-aos="fade-right"
-              data-aos-delay="2100"
+              data-aos-delay="1700"
               data-aos-duration="700"
             >
               Doctorr
             </p>
             <div className="flex justify-between items-center">
               <button
-                className="flex justify-center items-center gap-2 text-lg font-bold"
+                className="flex justify-center items-center gap-2 text-lg font-bold overflow-hidden"
                 data-aos="fade-left"
-                data-aos-delay="2200"
+                data-aos-delay="1800"
                 data-aos-duration="700"
               >
                 See On{' '}
-                <span>
+                <span className="text-blue-400">
                   <FaTwitter />
                 </span>{' '}
               </button>
               <p
-                className="lg:ml-16"
+                className="lg:ml-16 overflow-hidden"
                 data-aos="fade-right"
-                data-aos-delay="2200"
+                data-aos-delay="1800"
                 data-aos-duration="700"
               >
                 Jan 18, 2024

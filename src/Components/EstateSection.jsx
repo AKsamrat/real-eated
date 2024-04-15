@@ -37,7 +37,7 @@ const EstateSection = () => {
       <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
         <TabList>
           <Tab>Penthouse</Tab>
-          <Tab>Beatchfront</Tab>
+          <Tab>Beatch</Tab>
           <Tab>Villas</Tab>
           <Tab>Pvt.Island </Tab>
         </TabList>
