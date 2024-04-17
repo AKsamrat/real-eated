@@ -7,7 +7,7 @@ const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
   // console.log(user);
   const handleSignout = () => {
-    logOut().then(toast('successfully Loged Out')).catch();
+    logOut().then(toast('successfully Logged Out')).catch();
   };
 
   const navlink = (

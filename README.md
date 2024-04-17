@@ -19,17 +19,6 @@ https://real-estate-6921f.web.app/
 
 ### <code style="color:aqua">npm Package Name:</code>
 
-- fortawesome/fontawesome-free
-- aos
-- firebase10.10.0
-- "localforage": "^1.10.0",
-- "mdb-react-ui-kit": "^7.2.0",
-- "react": "^18.2.0",
-- "react-dom": "^18.2.0",
+- "aos": "^3.0.0-beta.6",
 - "react-hook-form": "^7.51.2",
-- "react-icons": "^5.0.1",
-- "react-router-dom": "^6.22.3",
-- "react-tabs": "^6.0.2",
-- "react-toastify": "^10.0.5",
-- "react-tooltip": "^5.26.3",
 - "swiper": "^11.1.0"
